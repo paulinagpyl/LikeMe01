@@ -39,7 +39,6 @@ app.delete('/posts/:id',(req, res)=>sql.eliminarPost(req.params.id)
     .catch((error) => res.status(500).json({status:false, code:500, message:error}))
 )
 
-
 app.all('*',(req, res)=>res.status(404).json({status: false, code: 404, message: 'page nor found'}))
 
 app.listen(PORT,()=>console.log('Server up'))

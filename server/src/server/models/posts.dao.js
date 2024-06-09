@@ -14,11 +14,6 @@ export const agregarPost = (titulo,img,descripcion) =>
 export const like =(id)=>
     db('update posts set likes = likes +1 where id = $1 returning *;',[id])
     
-// export const updateByLikesPost =(id,likes)=>
-//     db('update posts set likes = $2 where id = $1 returning *;',[id, likes])
-    
-// export const eliminarPost =(id)=>
-//         db('DELETE FROM posts where id = $1 returning *;', [id])
-
+// elimina el post del id
 export const eliminarPost =(id)=>
-        db('DELETE FROM posts where id = $1 returning *;', [id])
+    db('DELETE FROM posts where id = $1 returning *;', [id])
